@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Question</title>
+</head>
+
+<body>
+    <p>Open console for the output</p>
+    <script>
+        var listOfObjs = [
+            { Name: 'N1', Age: 20, Salary: 1000, DOB: '1-10-1998' },
+            { Name: 'N2', Age: 21, Salary: 30000, DOB: '2-10-1998' },
+            { Name: 'N3', Age: 23, Salary: 800, DOB: '3-10-1998' },
+            { Name: 'N4', Age: 22, Salary: 4000, DOB: '5-10-1998' }
+        ]
+        //1
+        console.log('List of objects', JSON.parse(JSON.stringify(listOfObjs)));
+
+        //2
+        console.log('Salary greater than 5000');
+        for (var i = 0; i < listOfObjs.length; i++) {
+            if (listOfObjs[i].Salary > 5000) {
+                console.log(listOfObjs[i]);
+            }
+        }
+        //3
+        console.log('Grouping on the basis of age');
+        var l1 =  [];
+        var l2 = [];
+        for(var i = 0; i <listOfObjs.length;i++){
+            if(listOfObjs[i].Age<=20){
+                l1.push(listOfObjs[i]);
+            }
+            else{
+                l2.push(listOfObjs[i]);
+            }
+        }
+        console.log('Group-1',l1);
+        console.log('Group-2',l2);
+
+
+        //4
+        for(var i = 0;i< listOfObjs.length; i++){
+            if(listOfObjs[i].Salary<1000 && listOfObjs[i].Age>20){
+                listOfObjs[i].Salary = 5*listOfObjs[i].Salary
+            }
+        }
+        console.log('After increment', listOfObjs);
+    </script>
+</body>
+
+</html>
